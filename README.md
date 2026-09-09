@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-    BlackGPT is an AI assistant from <strong>Ascend</strong>, built with Next.js and the AI SDK.
+    BlackGPT is an AI assistant from <strong>The Bureau of BIA</strong> (Black Internet Alliance), powered by Ascend. Built with Next.js and the AI SDK.
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@
 
 ## Model Providers
 
-BlackGPT serves its default model, **Qwen 3.8 Max**, through Ascend's OpenAI-compatible proxy. The remaining curated models still route through the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway).
+BlackGPT serves its default model, **Qwen 3.8 Max**, through the BIA OpenAI-compatible proxy. The remaining curated models still route through the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway).
 
 Models are declared in `lib/ai/models.ts`. Each entry carries a `source`:
 

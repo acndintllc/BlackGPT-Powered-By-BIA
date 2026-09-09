@@ -18,7 +18,6 @@ import {
   useArtifactSelector,
 } from "@/hooks/use-artifact";
 import type { Attachment, ChatMessage } from "@/lib/types";
-import { cn } from "@/lib/utils";
 import { Artifact } from "./artifact";
 import { ChatHeader } from "./chat-header";
 import { DataStreamHandler } from "./data-stream-handler";
@@ -113,12 +112,7 @@ export function ChatShell() {
   return (
     <>
       <div className="flex h-dvh w-full flex-row overflow-hidden">
-        <div
-          className={cn(
-            "flex min-w-0 flex-col bg-sidebar transition-[width] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
-            isArtifactVisible ? "w-[40%]" : "w-full"
-          )}
-        >
+        <div className="flex w-full min-w-0 flex-col bg-sidebar md:w-[35%]">
           <ChatHeader
             chatId={chatId}
             isReadonly={isReadonly}
@@ -130,7 +124,6 @@ export function ChatShell() {
               addToolApprovalResponse={addToolApprovalResponse}
               chatId={chatId}
               isArtifactVisible={isArtifactVisible}
-              isLoading={isLoading}
               isReadonly={isReadonly}
               messages={messages}
               onEditMessage={handleEditMessage}
@@ -141,7 +134,7 @@ export function ChatShell() {
               votes={votes}
             />
 
-            <div className="sticky bottom-0 z-1 mx-auto flex w-full max-w-4xl gap-2 border-t-0 bg-background px-2 pb-3 md:px-4 md:pb-4">
+            <div className="sticky bottom-0 z-1 mx-auto flex w-full max-w-4xl shrink-0 gap-2 border-t-0 bg-background px-2 pb-3 md:px-4 md:pb-4">
               {!isReadonly && (
                 <MultimodalInput
                   attachments={attachments}

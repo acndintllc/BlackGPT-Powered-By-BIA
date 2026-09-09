@@ -24,6 +24,7 @@ import { fetcher } from "@/lib/utils";
 import { useSidebar } from "../ui/sidebar";
 import { ArtifactActions } from "./artifact-actions";
 import { ArtifactCloseButton } from "./artifact-close-button";
+import { CanvasEmptyState } from "./canvas-empty-state";
 import { LoaderIcon } from "./icons";
 import { Toolbar } from "./toolbar";
 import { VersionFooter } from "./version-footer";
@@ -306,12 +307,16 @@ function PureArtifact({
     }
   }, [artifact.documentId, artifactDefinition, setMetadata]);
 
+  // On desktop the canvas is always present as the right-hand 65% column.
+  // With no artifact open it rests on the brand mark rather than collapsing.
   if (!artifact.isVisible && !isMobile) {
     return (
       <div
-        className="h-dvh w-0 shrink-0 overflow-hidden transition-[width] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+        className="flex h-dvh w-[65%] shrink-0 flex-col overflow-hidden border-border/50 border-l bg-sidebar"
         data-testid="artifact"
-      />
+      >
+        <CanvasEmptyState />
+      </div>
     );
   }
 
@@ -465,7 +470,7 @@ function PureArtifact({
 
   return (
     <div
-      className="flex h-dvh w-[60%] shrink-0 flex-col overflow-hidden border-l border-border/50 bg-sidebar transition-[width] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+      className="flex h-dvh w-[65%] shrink-0 flex-col overflow-hidden border-border/50 border-l bg-sidebar"
       data-testid="artifact"
     >
       {artifactPanel}
