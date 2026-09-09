@@ -54,7 +54,7 @@ export const titleModel: ChatModel = {
 export const chatModels: ChatModel[] = [
   {
     capabilities: { reasoning: false, tools: true, vision: false },
-    description: "Qwen flagship model, served via the Ascend proxy",
+    description: "Qwen flagship model, served via the BIA proxy",
     id: QWEN_MAX_MODEL_ID,
     name: "Qwen 3.8 Max",
     provider: "qwen",

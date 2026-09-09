@@ -19,7 +19,7 @@ export const myProvider = isTestEnvironment
   : null;
 
 /**
- * Default base URL for the Ascend OpenAI-compatible proxy. Point
+ * Default base URL for the BIA OpenAI-compatible proxy. Point
  * `AI_PROXY_BASE_URL` at your own deployment to override it.
  */
 const DEFAULT_PROXY_BASE_URL =
@@ -48,7 +48,7 @@ function getProxyProvider() {
   cachedProxyProvider = createOpenAICompatible({
     apiKey,
     baseURL: process.env.AI_PROXY_BASE_URL ?? DEFAULT_PROXY_BASE_URL,
-    name: "ascend-proxy",
+    name: "bia-proxy",
   });
 
   return cachedProxyProvider;

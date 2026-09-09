@@ -7,7 +7,7 @@ import {
   APP_FULL_NAME,
   APP_NAME,
   APP_URL,
-  PARENT_BRAND,
+  PARENT_BRAND_FULL,
 } from "@/lib/brand";
 
 import "./globals.css";
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: APP_FULL_NAME,
     title: APP_FULL_NAME,
   },
-  publisher: PARENT_BRAND,
+  publisher: PARENT_BRAND_FULL,
   title: {
     default: APP_FULL_NAME,
     template: `%s | ${APP_NAME}`,
